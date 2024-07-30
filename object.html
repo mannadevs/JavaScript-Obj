@@ -4,16 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Object Tutorial</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: #fff;
+        }
+        p {
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     
-
-
-
-
+    <p id="demo"></p>
 
     <script>
-        
+        const person = {
+            name: "Sumit",
+            age: 20,
+            country: 'bangladesh',
+            roll: 102
+        }
+
+        let StoreData = '';
+        for (x in person) {
+           StoreData += x; 
+        }
+
+        let objLen  = Object.keys(person).length;
+        console.log(objLen)
+
+        function Person (fname, lname, age, id) {
+            this.firstName = fname;
+            this.lastName = lname;
+            this.age = age;
+            this.id = id;
+            
+        };
+        Person.prototype.fullNameCuntry = function () {
+                return this.firstName + " " + this.lastName + " age: " + this.age;
+            }
+
+        const munni = new Person('Munni', "Cunni", 20, "burilal420");
+        console.log(munni.fullNameCuntry())
+
+
+        String.prototype.doingFun = function () {
+            return 'i am doing fun!';
+        }
+
+        let ab = "bangladesh";
+
+        console.log(ab.doingFun())
+
+
+
+        // let Len = person.length;
+        // console.log(Len)
+        // document.getElementById("demo").innerHTML = StoreData;
     </script>
 </body>
 </html>
